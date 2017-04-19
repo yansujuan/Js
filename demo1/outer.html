@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>控制div属性</title>
+</head>
+<style>
+	html,body{
+		display:block;
+	}
+	body{
+		margin:8px;
+	}
+	.outer{
+		width:500px;
+		margin:0 auto;
+		padding:0;
+		text-align:center;
+	}
+	.outer input{
+		width:80px;
+		height: 30px;
+	}
+	#hezi{
+		width: 50px;
+		height: 50px;
+		background:pink;
+		margin:10px auto;
+	}
+</style>
+<body>
+	<div class="outer">
+		<input type="button" value='变高'>
+		<input type="button" value='变宽'>
+		<input type="button" value='变色'>
+		<input type="button" value='隐藏'>
+		<input type="button" value='重置'>
+		<div id='hezi'></div>
+	</div>
+</body>
+<script>
+	var changStyle = function(ele,attr,value){
+		console.log(ele.style[attr] = value)
+//		console.log(ele)//元素（<div id="hezi" style="height: 150px;"></div>）
+//		console.log(attr)//每一个属性
+//		console.log(value)//每一个值
+	}
+	window.onload = function(){
+		var oBtn = document.getElementsByTagName("input")[0],
+			oDiv = document.getElementById("hezi");
+		var Styl = ["height","width","background","display","display"],
+			Bian = ["150px","150px","skyblue","none","block"];
+		for(var i=0; i<oBtn.length;i++){
+			oBtn[i].index=i
+			oBtn[i].onclick=function(){
+				this.index == oBtn.length - 1 && (oDiv.style.cssText = '')
+				changStyle(oDiv,Styl[this.index],Bian[this.index])
+			}
+		}
+		
+	}
+</script>
+</html>

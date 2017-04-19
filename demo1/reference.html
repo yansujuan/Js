@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数传参</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		p{
+			margin:10px auto;
+		}
+		body{
+			margin:0 auto;
+			text-align:center;
+		}
+		button{
+			cursor:pointer;
+		}
+	</style>
+</head>
+<body>
+		<p class='top'><input type="text" value='北京市'></p>
+		<p><input type="text" value='上海市'></p>
+		<button>传参</button>
+</body>
+<script>
+	function myFn(a,b){
+		alert(a);
+		alert(b)
+	}
+	window.onload=function(){
+		var oInput = document.getElementsByTagName("input");
+		var oBtn = document.getElementsByTagName("button")[0];
+		oBtn.onclick=function(){
+			myFn(oInput[0].value,oInput[1].value)
+		}
+	}
+</script>
+</html>

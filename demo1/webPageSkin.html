@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页换肤</title>
+	<link rel="stylesheet" href="css/green.css">
+</head>
+<style>
+	html,body{
+		height: 100%;
+	}
+	*{
+		margin:0;
+		padding:0;		
+	}
+	body{
+		background:#A3C5A8;
+	}
+	link{
+		display:none;
+	}
+	ul,ol{
+		list-style:none;
+	}
+	#outer{
+		width:500px;
+		overflow:hidden;
+		margin:0 auto;
+		zoom:1;
+	}
+	#skin,#nav{
+		overflow:hidden;
+		zoom:1;
+	}
+	#skin{
+		margin:10px 0;
+	}
+	#skin li{
+		width:6px;
+		height: 6px;
+		float:left;
+		margin-right:10px;
+		border:4px solid;
+		cursor: pointer;
+		overflow:hidden;
+		text-indent:-99999px;
+	}
+	#skin li.current{
+		background:#fff !important;
+	}
+	#nav{
+		border:1px solid #fff;
+		padding:0px !improtant;
+	}
+	#nav li{
+		width:82px;
+		border-right:1px solid #fff;
+		text-align:center;
+		line-height:25px;
+		float:left;
+		font-size:10px;
+		color:#fff;
+		box-sizing:border-box;
+	}
+	#nav li:last-child{
+		border-right:none;
+		width: 83px;
+	}
+	#red{
+		background:red;
+		border-color:red;
+	}
+	#green{
+		background:green;
+		border-color:green;
+	}
+	#skyblue{
+		background:skyblue;
+		border-color:skyblue;
+	}
+	#blue{
+		background:blue;
+		border-color:blue;
+	}
+	#pink{
+		background:pink;
+		border-color:pink;
+	}
+</style>
+<body>
+<div id='outer'>
+	<ul id='skin'>
+		<li id='red' title='红色'>红</li>
+		<li id='green' title='绿色'>绿</li>
+		<li id='skyblue' title='天蓝色'>天蓝</li>
+		<li id='blue' title='蓝色'>蓝</li>
+		<li id='pink' title='粉色'>粉</li>
+	</ul>
+	<ul id='nav'>
+		<li>新闻</li>
+		<li>娱乐</li>
+		<li>体育</li>
+		<li>电影</li>
+		<li>音乐</li>
+		<li>旅游</li>
+	</ul>
+</div>
+</body>
+<script>
+	window.onload = function(){
+		var oLink = document.getElementsByTagName("link")[0];
+		var oSkin = document.getElementById("skin").getElementsByTagName("li");
+		for(var i=0; i<oSkin.length;i++){
+			oSkin[i].onclick = function(){
+				for(var skin in oSkin)
+					oSkin[skin].className = "";
+					this.className = 'current';
+					oLink["href"] = "css/" +this.id +".css"
+				
+			}
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,10 @@
+body{
+	background:skyblue !important;	
+}
+#nav{
+	background:skyblue;
+	border-color:#fff;	
+}
+#nav li{
+	border-color:#fff;	
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标划过事件</title>
+	<style>
+		#box{
+			width: 150px;
+			height: 150px;
+			border:4px solid #000;
+			background:#000;
+			margin:20px auto;
+			color:#fff;
+			font-size:10px;
+			padding:10px;
+			box-sizing:border-box;
+		}
+		#box.hover{
+			width: 150px;
+			height: 150px;
+			border:4px solid red;
+			background:#fff;
+			margin:20px auto;
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div id='box'>鼠标移入改变样式，移出恢复</div>
+</body>
+<script>
+	window.onload=function(){
+		var oDiv = document.getElementById("box");
+		oDiv.onmouseover = function(){
+			oDiv.className='hover'
+		}
+		oDiv.onmouseout = function(){
+			oDiv.className=''
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击盒子变色</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		body{
+			text-align: center;
+		}
+		.btn{
+			margin:20px 0;
+		}
+		.box div{
+			width: 150px;
+			height: 100px;
+			background:#000;
+			display:inline-block;
+			margin-right: 10px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class='btn'><button>点击盒子变为红色</button></div>
+	<div class='box'>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</body>
+<script>
+		var oBtn = document.getElementsByTagName("button")[0];
+		var oBox = document.getElementsByClassName("box")[0];
+		var oDiv = oBox.getElementsByTagName("div");
+	window.onload= function(){
+		oBtn.onclick=function(){
+			for(var i=0;i<oDiv.length;i++){
+				oDiv[i].style.background='red'
+			}
+		}
+	}
+</script>
+</html>
