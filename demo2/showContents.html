@@ -3,15 +3,56 @@
 <head>
 	<meta charset="UTF-8">
 	<title>点击Div，显示其innerHTML内容</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body,ul,ol{
+			list-style: none;
+		}
+		#outer{
+			margin:0 auto;
+		}
+		#outer div{
+			margin:20px auto;
+			width: 500px;
+			height: 150px;
+			border:1px solid rgba(160, 95, 95, 0.09);
+			color:rgba(29, 27, 27, 0.97);
+			font-size:10px;
+			padding:20px;
+			box-sizing:border-box;
+		}
+		#outer div p{
+			padding-top:10px;
+			box-sizing:border-box;
+		}
+	</style>
 </head>
 <body>
 	<div id="outer">
 		<div>
 			<strong>冒泡排序优化思路</strong>
-			<p>对于全部元素都有序排列的数组，需要及时终止无效的交换操作——优化外层for循环</p>
-			<p>对于仅部分元素有序排列的数组，需要及时终止无效的交换操作——优化内层for循环</p>
+			<p>1、对于全部元素都有序排列的数组，需要及时终止无效的交换操作——优化外层for循环</p>
+			<p>2、对于仅部分元素有序排列的数组，需要及时终止无效的交换操作——优化内层for循环</p>
 		</div>
-		<div></div>
+		<div>
+			<strong>二进制，八进制，十进制，十六进制之间的转换</strong>
+			<p>二进制是计算技术中广泛采用的一种数制。二进制数据是用0和1两个数码来表示的数。它的基数为2，进位规则是“逢二进一”，借位规则是“借一当二”，由18世纪德国数理哲学大师莱布尼兹发现。当前的计算机系统使用的基本上是二进制系统，数据在计算机中主要是以补码的形式存储的。计算机中的二进制则是一个非常微小的开关，用“开”来表示1，“关”来表示0。</p>
+		</div>
 	</div>
 </body>
+<script>
+	window.onload = function(){
+		var oUt =document.getElementById("outer"),
+			oDiv = oUt.getElementsByTagName("div");
+		for(var i=0;i<oDiv.length;i++){
+			oDiv[i].onclick=function(){
+				alert(this.innerHTML)
+			}
+		}
+		
+	}
+</script>
 </html>
