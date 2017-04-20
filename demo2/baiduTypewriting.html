@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度输入法</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		body{
+			text-align:center;
+		}
+		body,ul,ol{
+			list-style:none;
+		}
+		#outer{
+			margin-top:20px;
+		}
+		#writ{
+			width: 68px;
+			margin:0 auto;
+			background:lemonchiffon;
+			border:1px solid lightblue;
+			display:none;
+		}
+		#writ li{
+			color:coral;
+			height: 20px;
+			line-height:20px;
+			text-align:center;
+			font-size:10px;
+			border-bottom:1px solid pink;
+		}
+		#writ .color{
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="outer">
+		<button id='btn'>百度输入法</button>
+		<ul id='writ'>
+			<li>手写</li>
+			<li>拼音</li>
+			<li>全拼</li>
+		</ul>
+	</div>
+</body>
+<script>
+	window.onload = function(){
+		var oBtn = document.getElementById("btn"),
+			oWrit = document.getElementById("writ"),
+			oLi = oWrit.getElementsByTagName("li");
+		oBtn.onclick=function(){
+			oWrit.style.display=oWrit.style.display=='block'?'none':'block';
+		}
+		for(var i=0;i<oLi.length;i++){
+			oLi[i].onclick=function(){
+					oWrit.style.display='none';
+					for(var j=0;j<oLi.length;j++){
+						oLi[j].className=''
+					}
+					this.className='color'
+				}
+		}
+	}
+</script>
+</html>
