@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#outer{
+			width: 500px;
+			margin:0px auto;
+		}
+		#labels span{
+			font-size:10px;
+			color:gainsboro;
+			padding-left:10px;
+			box-sizing:border-box;
+		}
+	</style>
+</head>
+<body>
+	<div id="outer">
+		<label id='labels'>
+			<input type="text" value='1,8,5,18'>
+			<span>输入数字求和，数字之间用半角","号分隔</span>
+		</label>
+		<p>
+			<button id='btn'>求和</button>
+		</p>
+		<strong id='sum'></strong>
+	</div>
+</body>
+<script>
+	window.onload = function(){
+		var oLabels = document.getElementById("labels");
+		var oSum = document.getElementById("sum");
+		var oInputs = oLabels.getElementsByTagName("input")[0];
+		var oBtn =document.getElementById("btn");
+		oInputs.onkeyup = function(){
+			this.value=this.value.replace(/[^(\d)|(,)]/,"")
+		}
+		oBtn.onclick=function(){
+			var sum=0;
+			var inpu =oInputs.value.split(",")
+			for(var i in inpu){
+				sum+=parseInt(inpu[i])
+			}
+			oSum.innerHTML=sum
+		}
+	}
+	
+/*window.onload = function ()
+{
+	var oLabels = document.getElementById("labels");
+		var oSum = document.getElementById("sum");
+		var oInputs = oLabels.getElementsByTagName("input")[0];
+		var oBtn =document.getElementById("btn");
+	oInputs.onkeyup = function ()
+	{
+		this.value = this.value.replace(/[^(\d)|(,)]/,"")
+	}	
+	oBtn.onclick = function ()
+	{
+		var sum = 0;
+		var oInputs = document.getElementsByTagName("input")[0].value.split(",");
+		for (var i in oInputs)
+		{
+			sum += parseInt(oInputs[i])
+		}
+		oSum.innerHTML = sum
+	}
+}*/
+
+</script>
+</html>
