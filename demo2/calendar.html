@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简易年历</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul,ol{
+			list-style:none;
+		}
+		#outer{
+			width: 288px;
+			overflow:hidden;
+			zoom:1;
+			background:#eaeaea;
+			margin:50px auto;
+			padding:0 0 10px 10px;
+		}
+		#outer ul{
+			zoom:1;
+			overflow:hidden;
+		}
+		#outer li{
+			width: 50px;
+			height: 50px;
+			line-height: 1.5;
+			text-align:center;
+			color:#fff;
+			background:#424242;
+			float:left;
+			margin:10px 10px 0 0;
+			padding:5px;
+			border:1px solid #424242;
+			font-size:14px;
+		}
+		#outer li strong{
+			display:block;
+			font-size:18px;
+		}
+		#outer li.current{
+			background:#fff;
+			color:#f69;
+		}
+		.msg{
+			height: 70px;
+			border:1px solid #fff;
+			margin:10px 10px 0 0;
+			padding:5px;
+			background:#f1f1f1;
+			line-height: 1.5;
+		}
+		.msg p{
+			font-size:14px;
+		}
+		.msg h2{
+			font-size:18px;
+		}
+	</style>
+</head>
+<body>
+	<div id="outer">
+		<ul>
+			<li>
+				<strong>1</strong>
+				JAN
+			</li>
+			<li>
+				<strong>2</strong>
+				FER
+			</li>
+			<li>
+				<strong>3</strong>
+				MAR
+			</li>
+			<li>
+				<strong>4</strong>
+				APR
+			</li>
+			<li>
+				<strong>5</strong>
+				MAY
+			</li>
+			<li>
+				<strong>6</strong>
+				JUN
+			</li>
+			<li>
+				<strong>7</strong>
+				JUL
+			</li>
+			<li>
+				<strong>8</strong>
+				AUG
+			</li>
+			<li>
+				<strong>9</strong>
+				SEP
+			</li>
+			<li>
+				<strong>10</strong>
+				OCT
+			</li>
+			<li>
+				<strong>11</strong>
+				NOV
+			</li>
+			<li>
+				<strong>12</strong>
+				DEC
+			</li>
+		</ul>
+		<div id='msg' class='msg'>
+			<h2>
+				<strong>6</strong>月节日
+			</h2>
+			<p>端午节：6月4日至6日放假3天。</p>
+		</div>
+	</div>
+</body>
+<script>
+	window.onload= function(){
+		var oUter = document.getElementById('outer'),
+			oLi = oUter.getElementsByTagName('li');
+		var oMsg = document.getElementById("msg"),
+			oStrong = oMsg.getElementsByTagName("strong")[0];
+		var oP = oMsg.getElementsByTagName("p")[0];
+		var oArray=[
+			"元旦：1月1日至3日放假三天。",
+			"春节：2月2日至8日放假7天。",
+			"妇女节：3月8日妇女节，与我无关。",
+			"清明节：4月3日至5日放假3天",
+			"劳动节：4月30日至5月2日放假3天。",
+			"端午节：6月4日至6日放假3天。",
+			"小暑：7月7日小暑。不放假。",
+			"七夕节：8月6日七夕节。不放假。",
+			"中秋节：9月10日至12日放假3天。",
+			"国庆节：10月1日至7日放假7天。",
+			"立冬：11月8日立冬。不放假。",
+			"艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。"
+		]
+		for(var i=0;i<oLi.length;i++){
+			oLi[i].index=i;
+			oLi[i].onmouseover=function(){
+				for(var j=0;j<oLi.length;j++){
+					oLi[j].className=''
+				}
+				this.className='current'
+				oP.innerHTML=oArray[this.index]
+				oStrong.innerHTML=this.index+1
+			}
+		}
+	}
+</script>
+</html>
