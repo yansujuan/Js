@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变div任意属性的值</title>
+	<style>
+		body{
+			font-size:10px;
+			text-align:center;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			margin:20px auto;
+			background:black;
+			color:#fff;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="outer">
+	<p>
+		<label>
+			属性名<input type="text" value='background'>
+		</label>
+	</p>
+	<p>
+		<label>
+			属性值<input type="text" value='black'>
+		</label>
+	</p>
+		<button id='sure'>确定</button>
+		<button id='reset'>重置</button>
+		<div class='box' id='box'>
+			这是一个如同女生脾气一般善变的盒子，见证它的神奇之处吧.
+		</div>
+	</div>
+</body>
+<script>
+	window.onload = function(){
+		var oSure = document.getElementById("sure");
+		var oReset = document.getElementById("reset");
+		var oInputs = document.getElementsByTagName("input");
+		var oBox = document.getElementById("box");
+		var changeStyle=function(elem,name,value){
+			/*console.log(elem)
+			console.log(name)
+			console.log(value)*/
+			elem.style[name]=value
+		}
+		oSure.onclick=function(){
+			changeStyle(oBox,oInputs[0].value,oInputs[1].value)
+		}
+		oReset.onclick=function(){
+			oBox.removeAttribute("style")
+		}
+	}
+</script>
+</html>
