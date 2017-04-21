@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标移入移除，改变透明度</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		body,ul,li{
+			list-style:none;
+		}
+		.uls{
+			width: 700px;
+			padding:0 0 10px 10px;
+			overflow:hidden;
+			zoom:1;
+			margin:50px auto;
+			border:1px solid pink;
+		}
+		.uls li{
+			margin:10px 10px 0 0;
+			border:1px solid lightblue;
+			width: 128px;
+			height: 128px;
+			float: left;
+			box-sizing: border-box;
+		}
+		.uls li img{
+			float: left;
+			opacity:0.3;
+		}
+		.uls li.current img{
+			opacity:1;
+		}
+	</style>
+</head>
+<body>
+	<ul class='uls' id='uls'>
+			<li class='ml'>
+				<img src="img/car1.jpg" alt="">
+			</li>
+			
+			<li>
+				<img src="img/car2.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car3.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car4.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car5.jpg" alt="">
+			</li>
+			<li class='ml'>
+				<img src="img/car6.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car7.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car8.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car9.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car10.jpg" alt="">
+			</li>
+			<div style='clear:both'></div>
+		</ul>
+</body>
+<script>
+	window.onload = function(){
+		var oUls = document.getElementById("uls"),
+			oLis = oUls.getElementsByTagName("li");
+			for(var i=0;i<oLis.length;i++){
+				oLis[i].onmouseover = function(){
+					this.className='current'
+				}
+				oLis[i].onmouseout = function(){
+					this.className=''
+				}
+			}
+		
+	}
+</script>
+</html>
