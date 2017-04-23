@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单一按钮显示/隐藏</title>
+	<link rel="stylesheet" href="font_gj14ki0ye72pgb9/iconfont.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#outer{
+			width: 200px;
+			margin:50px auto;
+			overflow:hidden;
+			zoom:1;
+			background:#aaa ;
+		}
+		#outer strong{
+			background:#ced3d7 ;
+			font-size:14px;
+			color:#57646E;
+			width: 100%;
+			display:block;
+			height:30px;
+			line-height:30px;
+			padding-left:10px;
+			box-sizing:border-box;
+		}
+		#outer ul{
+			border:1px solid #DEE3E6;
+		}
+		#outer ul li{
+			color:dimgrey;
+			padding-left:10px;
+			background:#e9edf2;
+			font-size:10px;
+			line-height: 2;
+			box-sizing:border-box;
+		}
+		#outer ul li:hover{
+			background:#ccc;
+		}
+		#outer strong span{
+			float:right;
+			padding-right:10px;
+			box-sizing:border-box;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="outer">
+		<strong>播放列表...<span class="icon iconfont icon-sanjiao-xia-wukuang-wudi"></span></strong>
+		<ul>
+			<li>玩家之徒 - 蔡依林</li>
+			<li>原谅我就是这样的女生 - 戴佩妮</li>
+			<li>猜不透 - 丁当</li>
+			<li>自导自演 - 周杰伦</li>
+			<li>浪漫窝 - 弦子</li>
+			<li>流年 - 王菲</li>
+		</ul>
+	</div>
+</body>
+<script>
+	window.onload = function(){
+		var oUter = document.getElementById("outer"),
+			oUl = oUter.getElementsByTagName("ul")[0],
+//			oLi = oUl.getElementsByTagName("li"),
+			oStrong = oUter.getElementsByTagName("strong")[0],
+			oSpan = oStrong.getElementsByTagName("span")[0];
+		oStrong.onclick = function(){
+			oUl.style.display=oUl.style.display=='none'?"block":'none';
+			if(oSpan.className.indexOf('icon-sanjiao-xia-wukuang-wudi')==-1){
+				oSpan.className='icon iconfont icon-sanjiao-xia-wukuang-wudi'
+			}else{
+				oSpan.className='icon iconfont icon-sanjiao-shang-wukuang-wudi'
+			}
+			
+		}/*
+		
+		for(var i=0;i<oLi.length;i++){
+			oLi[i].index=i
+			for(var j=0;j<oLi.length;j++){
+				console.log(oLi[j])
+				oLi[j].style.className=''
+			}
+			oLi[this.index].style.className='current'
+		}*/
+	}
+</script>
+</html>
