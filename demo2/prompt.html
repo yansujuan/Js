@@ -4,18 +4,67 @@
 	<meta charset="UTF-8">
 	<title>提示框效果</title>
 	<style>
-		body,div,h2,ul,li{margin:0;padding:0;}
-		body{font:12px/1.5 Tahoma;}
-		ul{list-style-type:none;}
-		#outer{width:560px;border:1px solid #333;margin:10px auto;padding:0 0 10px 10px;}
-		#outer h2{line-height:30px;text-align:center;margin-top:10px;}
-		#outer ul:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
-		#outer ul{zoom:1;}
-		#outer ul li{position:relative;float:left;border:1px solid #333;margin:10px 10px 0 0;display:inline;}
-		#outer ul li img{position:absolute;top:-14px;left:-14px;display:none;border:2px solid #999;cursor:crosshair;}
-		#outer ul li a{color:#666;width:80px;height:80px;display:block;background:#f0f0f0;text-decoration:none;padding:10px;}
-		#outer ul li a strong{display:block;}
-		.zindex{z-index:1;}
+		body,div,h2,ul,li{
+			margin:0;
+			padding:0;
+		}
+		body{
+			font:12px/1.5 Tahoma;
+		}
+		ul{
+			list-style-type:none;
+		}
+		#outer{
+			width:560px;
+			border:1px solid #333;
+			margin:10px auto;
+			padding:0 0 10px 10px;
+		}
+		#outer h2{
+			line-height:30px;
+			text-align:center;
+			margin-top:10px;
+		}
+		#outer ul:after{
+			content:".";
+			display:block;
+			height:0;
+			clear:both;
+			visibility:hidden;
+		}
+		#outer ul{
+			zoom:1;
+		}
+		#outer ul li{
+			position:relative;
+			float:left;
+			border:1px solid #333;
+			margin:10px 10px 0 0;
+			display:inline;
+		}
+		#outer ul li img{
+			position:absolute;
+			top:-14px;
+			left:-14px;
+			display:none;
+			border:2px solid #999;
+			cursor:crosshair;
+		}
+		#outer ul li a{
+			color:#666;
+			width:80px;
+			height:80px;
+			display:block;
+			background:#f0f0f0;
+			text-decoration:none;
+			padding:10px;
+		}
+		#outer ul li a strong{
+			display:block;
+		}
+		.zindex{
+			z-index:1;
+		}
 	</style>
 </head>
 <body>

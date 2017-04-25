@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>划过图片，改变路径</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		body{
+			background:#000;
+		}
+		.Oul{
+			width: 200px;
+			height:200px;
+			display:table;
+			position:absolute;
+			top:20%;
+			left:50%;
+			margin-top:-100px;
+			margin-left:-100px;
+			clear:both;
+			overflow:hidden;
+			zoom:1;
+			background:#fff;
+			border-radius:5px 5px 5px 5px;
+		}
+		.Oul li{
+			float:left;
+			margin-top:5px;
+		}
+		.Oul li.first img{
+			width: 150px;
+			height:80px;
+		}
+		.Oul li img{
+			width: 30px;
+			width: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div >
+		<ul id="Oul" class='Oul'>
+			<li class='first'>
+				<img src="img/car8.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car2.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car3.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car4.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car5.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car6.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car7.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car8.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car2.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car3.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car4.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car5.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car6.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/car7.jpg" alt="">
+			</li>
+		</ul>
+	</div>
+</body>
+<script>
+	var oUl = document.getElementById("Oul"),
+		ofirst = oUl.getElementsByClassName("first"),
+		oImgs = oUl.getElementsByTagName("img");
+	for(var i=0;i<oImgs.length;i++){
+		oImgs[i].onmouseover = function(){
+			oImgs[0].src=this.src
+		}
+	}
+</script>
+</html>
