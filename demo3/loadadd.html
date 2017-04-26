@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面加载，自动叠加</title>
+	<style>
+		span{
+			display:table;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<span>0</span>
+</body>
+<script>
+	window.onload = function(){
+		var oSpan = document.getElementsByTagName('span')[0];
+		var cont=0;
+			setInterval(function(){
+				oSpan.innerHTML=++cont;
+				
+			},1000)
+			
+		
+	}
+</script>
+</html>
