@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>累计叠加</title>
+	<style>
+		button{
+			display:table;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<button id='btn'>0</button>
+</body>
+<script>
+	window.onload = function(){
+		var oBtn = document.getElementById('btn');
+		var arr=0;
+		oBtn.onclick=function(){
+			this.innerHTML=++arr
+			alert(arr)
+		}
+	}
+</script>
+</html>
