@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>求和</title>
+	<style>
+		#outer{
+			width: 500px;
+			position:absolute;
+			left:50%;
+			margin-left:-250px;
+		}
+		#outer input{
+			width: 50px;
+			border:1px solid #ccc;
+			background:#eee;
+		}
+		#outer span{
+			font-weight: bold;
+			padding-left:3px;
+			display:inline-block;
+		}
+		#outer button{
+			margin-left:10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="outer">
+		<input type="text"> 
+		<span>+</span>
+		<input type="text">
+		<span>=</span>
+		<button id='btn'>求和</button>
+		<span id='cont'></span>
+	</div>
+</body>
+<script>
+	window.onload = function(){
+		var oInput = document.getElementsByTagName("input");
+		var oBtn = document.getElementById("btn");
+		var oCont = document.getElementById("cont");
+		for(var i=0;i<oInput.length-1;i++){
+			oInput[i].onkeyup=function(){
+				this.value=this.value.replace(/[^\d]/,'')
+			}
+		}
+		oBtn.onclick = function(){
+		(oInput[0].value=='' || oInput[1].value=='' )?alert('请输入数字'):oCont.innerHTML=parseInt(oInput[0].value)+parseInt(oInput[1].value)
+			
+		}
+		
+	}
+</script>
+</html>
