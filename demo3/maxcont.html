@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>比较最大的数</title>
+	<style>
+		i{
+			font-style: normal;
+			padding-left:10px;
+			font-weight: bold;
+			color:#f00;
+		}
+		#outer{
+			display:table;
+			margin: 0 auto;
+		}
+		#outer input{
+			width: 50px;
+			border:1px solid darkgrey;
+			background:#ccc;
+		}
+		#outer span{
+			padding:0 5px;
+			font-weight: bold;
+		}
+		#outer button{
+			margin-left:15px;
+		}
+	</style>
+</head>
+<body>
+	<div id="outer">
+		<input type="text">
+		<span>vs</span>
+		<input type="text">
+		<button id='btn'>最大的数是</button>
+		<i>?</i>
+	</div>
+</body>
+<script>
+	window.onload = function(){
+		var oInput = document.getElementsByTagName('input'),
+			oBtn = document.getElementById('btn'),
+			oI = document.getElementsByTagName('i')[0];
+			for(i=0;i<oInput.length-1;i++){
+				oInput[i].onkeyup = function(){
+					this.value=this.value.replace(/[^\d]/,'')
+				}
+			}
+		oBtn.onclick=function(){
+			(oInput[0].value=='' || oInput[1].value=='')?alert('请输入数字'):(oI.innerHTML=Math.max(oInput[0].value,oInput[0].value))
+		}
+	}
+</script>
+</html>
