@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页时钟</title>
+	<style>
+		#outer{
+			background:#000;
+			display: table;
+			margin: 0 auto;
+			width: 240px;
+			height: 70px;
+			padding:10px;
+			color:#fff;
+			line-height: 70px;
+		}
+		#outer span{
+			width: 50px;
+			background:#fff;
+			line-height:30px;
+			height: 30px;
+			text-align:center;
+			display:inline-block;
+			margin-right:10px;
+			color:#000;
+		}
+	</style>
+</head>
+<body>
+	<div id="outer">
+		<span></span>点
+		<span></span>分
+		<span></span>秒
+	</div>
+</body>
+<script>
+	window.onload =function(){
+		var oUter = document.getElementById('outer');
+		var oSpan = oUter.getElementsByTagName('span');
+		setInterval(getTime,1000)
+		getTime()
+		function getTime(){
+			var oDate = new Date();
+			var aDate = [oDate.getHours(), oDate.getMinutes(), oDate.getSeconds()];
+			for(var i in aDate) oSpan[i].innerHTML=format(aDate[i])
+			
+		}
+	}
+	function format(a){
+		return a.toString().replace(/^(\d)$/,'0$1')
+	}
+	
+/*window.onload = function ()
+{
+	var outer = document.getElementById("outer");	
+	var aSpan = outer.getElementsByTagName("span");
+		
+	setInterval(getTimes, 1000);
+	getTimes();
+	function getTimes ()
+	{
+		var oDate = new Date();
+		var aDate = [oDate.getHours(), oDate.getMinutes(), oDate.getSeconds()];
+		for (var i in aDate) aSpan[i].innerHTML = format(aDate[i])
+	}
+	function format(a)
+	{
+		return a.toString().replace(/^(\d)$/, "0$1")	
+	}
+}*/
+
+</script>
+</html>

@@ -3,109 +3,190 @@
 <head>
 	<meta charset="UTF-8">
 	<title>网页计算器</title>
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		ul{
-			list-style: none;
-		}
-		#outer{
-			display: table;
-			margin: 0 auto;
-			border:1px solid #000;
-/*			background:#000;*/
-			width: 400px;
-			height: 500px;
-		}
-		.tit{
-			background:#333;
-			color:#fff;
-			text-align:right;
-			height: 20px;
-			font-size:10px;
-			line-height:20px;
-		}
-		.bot{
-			width: 100%;
-/*			border:none;*/
-			color: #000;
-			font-weight: bold;
-		}
-		.top{
-			height: 100px;
-			background:lemonchiffon;
-			color: #000;
-			font-weight: bold;
-		}
-		.uls{
-			
-		}
+		<style>
+			body,div,p,ul,li,input{
+				margin:0;
+				padding:0;
+			}
+			ul{
+				list-style-type:none;
+			}
+			a{
+				color:#fff;
+				outline:none;
+				text-decoration:none;
+			}
+			body{
+				font:700 24px/1.5 Arial;
+			}
+			#calc{
+				position:relative;
+				width:300px;
+				background:#000;
+				margin:10px auto;
+			}
+			#calc p{
+				color:#fff;
+				text-align:right;
+				font:12px/20px Arial;
+				padding:0 5px;
+			}
+			#calc .f-text{
+				border:0;
+				width:290px;
+				height:84px;
+				text-align:right;
+				font:700 50px/84px Arial;
+				background:url(http://www.fgm.cc/learn/lesson3/img/inputBg.jpg) repeat-x;
+				padding:0 5px;
+			}
+			#calc ul{
+				position:relative;
+				overflow:hidden;
+				zoom:1;
+				background:url(http://www.fgm.cc/learn/lesson3/img/bg.jpg);
+				padding:0 0 17px 8px;
+			}
+			#calc ul li{
+				float:left;
+				width:63px;
+				height:41px;
+				margin:17px 10px 0 0;
+			}
+			#calc ul li a{
+				display:block;
+				width:63px;
+				height:41px;
+				line-height:41px;
+				text-align:center;
+				background:url(http://www.fgm.cc/learn/lesson3/img/btn.png) no-repeat;
+			}
+			#calc ul li a:hover{
+				background-position:-63px 0;
+			}
+			#calc ul li.btn-1 a{
+				background-position:0 -41px;
+			}
+			#calc ul li.btn-1 a:hover{
+				background-position:-63px -41px;
+			}
+			#calc ul li.btn-2{
+				position:absolute;
+				top:174px;
+				right:0;
+				height:99px;
+			}
+			#calc ul li.btn-2 a{
+				height:99px;
+				line-height:99px;
+				background-position:0 -164px;
+			}
+			#calc ul li.btn-2 a:hover{
+				background-position:-63px -164px;
+			}
+			#calc ul li.btn-3{
+				width:136px;
+			}
+			#calc ul li.btn-3 a{
+				width:136px;
+				background-position:0 -82px;
+			}
+			#calc ul li.btn-3 a:hover{
+				background-position:0 -123px;
+			}
+			#formula{
+				position:absolute;
+				top:20px;
+				background:none;
+				border:0;
+				font:700 12px/1.5 Arial;
+				width:280px;
+				padding:3px 15px 0 5px;
+				text-align:right;
+			}
 	</style>
 </head>
 <body>
-	<div id="outer">
-	<p class='tit'>开始快乐的计算吧</p>
-	<input type="text" class='bot'>
-	<input type="text" class='top'>
-		<ul class='uls'>
-			<li>
-				<a href="javascript:;">c</a>
-			</li>
-			<li>
-				<a href="javascript:;">%</a>
-			</li>
-			<li>
-				<a href="javascript:;">÷</a>
-			</li>
-			<li>
-				<a href="javascript:;">×</a>
-			</li>
-			<li>
-				<a href="javascript:;">7</a>
-			</li>
-			<li>
-				<a href="javascript:;">8</a>
-			</li>
-			<li>
-				<a href="javascript:;">9</a>
-			</li>
-			<li>
-				<a href="javascript:;">-</a>
-			</li>
-			<li>
-				<a href="javascript:;">4</a>
-			</li>
-			<li>
-				<a href="javascript:;">5</a>
-			</li>
-			<li>
-				<a href="javascript:;">6</a>
-			</li>
-			<li>
-				<a href="javascript:;">+</a>
-			</li>
-			<li>
-				<a href="javascript:;">1</a>
-			</li>
-			<li>
-				<a href="javascript:;">2</a>
-			</li>
-			<li>
-				<a href="javascript:;">3</a>
-			</li>
-			<li>
-				<a href="javascript:;">=</a>
-			</li>
-			<li>
-				<a href="javascript:;">0</a>
-			</li>
-			<li>
-				<a href="javascript:;">.</a>
-			</li>
-		</ul>
-	
-	</div>
-</body>
+	<div id="calc">
+    <p>开始愉快的计算吧</p>
+    <input class="f-text" type="text" readonly="readonly" maxlength="9" value="0">
+    <ul>
+        <li class="btn-1" id='reset'>
+        	<a href="javascript:void(0)">c</a>
+        </li>
+        <li class="btn-1" id='cent'>
+        	<a href="javascript:void(0)">%</a>
+        </li>
+        <li class="btn-1" id='signOfDivisor'>
+        	<a href="javascript:void(0)">÷</a>
+        </li>
+        <li class="btn-1" id='multiplication'>
+        	<a href="javascript:void(0)">×</a>
+        </li>
+        <li>
+        	<a href="javascript:void(0)">7</a>
+        </li>
+        	<li>
+        	<a href="javascript:void(0)">8</a>
+        	</li>
+       	<li>
+        	<a href="javascript:void(0)">9</a>
+        </li>
+        <li class="btn-1" id='minus'>
+        	<a href="javascript:void(0)">-</a>
+       	</li>
+        <li>
+        	<a href="javascript:void(0)">4</a>
+        </li>
+        <li>
+        	<a href="javascript:void(0)">5</a>
+        </li>
+        <li>
+        	<a href="javascript:void(0)">6</a>
+        </li>
+        <li class="btn-1" id='add'>
+        	<a href="javascript:void(0)">+</a>
+        </li>
+        <li>
+        	<a href="javascript:void(0)">1</a>
+        </li>
+        <li>
+        	<a href="javascript:void(0)">2</a>
+        </li>
+        <li>
+        	<a href="javascript:void(0)">3</a>
+        </li>
+        <li class="btn-2" id='equality'>
+        	<a href="javascript:void(0)">=</a>
+        </li>
+        <li class="btn-3" id='dot'>
+        	<a href="javascript:void(0)">0</a>
+        </li>
+        <li>
+        	<a href="javascript:void(0)">.</a>
+        </li>
+    </ul>
+    <input id="formula" type="text" readonly="readonly" value="">
+</div>
+</body>	
+	<script>
+		window.onload = function(){
+			var oReset = document.getElementById('reset'),
+				oCent = document.getElementById('cent'),
+				oSignOfDivisor = document.getElementById('signOfDivisor'),
+				oMultiplication = document.getElementById('multiplication'),
+				oMinus = document.getElementById('minus'),
+				oAdd = document.getElementById('add'),
+				oEquality = document.getElementById('equality'),
+				oDot = document.getElementById('dot'),
+				oLis = document.getElementsByTagName('li'),
+				oInputs = document.getElementsByTagName('input');
+			for(var i=0;i<oLis.length;i++){
+				oLis[i].index=i
+				oLis[i].onclick = function(){
+					oInputs[0].value=oLis[i].innerHTML;
+				}
+			}
+		}
+	</script>
 </html>
