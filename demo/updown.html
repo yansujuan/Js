@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>上下</title>
+	<style>
+		.wrapp{
+/*			width: 500px;*/
+			margin:100px auto;
+		}
+		.wrapp div{
+			width: 20px;
+			height: 20px;
+			background:red;
+			display:inline-block;
+			margin:5px;
+			border-radius:100%;
+		}
+		.wrapp div:nth-child(2n){
+			animation:odd 1s 0s cubic-bezier(0.1, 0.03, 0.4, 0.33) infinite;
+		}
+		.wrapp div:nth-child(2n-1){
+			animation:event 1s 0s cubic-bezier(0.1, 0.03, 0.4, 0.33) infinite;
+		}
+		@keyframes event{
+			0%{
+				transform:scale(1.1)
+			}
+			25%{
+				transform:translateY(-30px)
+			}
+			50%{
+				transform:scale(0.4)
+			}
+			75%{
+				transform:translateY(30px)
+			}
+			100%{
+				transform:scale(.75)
+			}
+		}
+		@keyframes odd{
+			0%{
+				transform:scale(.4)
+			}
+			25%{
+				transform:translateY(30px)
+			}
+			50%{
+				transform:scale(1.1)
+			}
+			75%{
+				transform:translateY(-30px)
+			}
+			100%{
+				transform:scale(.75)
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapp">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>	
+</body>
+</html>

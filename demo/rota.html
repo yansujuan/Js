@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wrapper{
+			width: 1200px;
+			position:relative;
+			margin: 100px;
+		}
+		.wrapper div:first-child{
+			width: 15px;
+			height: 15px;
+			background:red;
+			left:10px;
+			top:10px;
+			position:absolute;
+			border-radius:100%;
+			animation:addrouter 1s 0s cubic-bezier(0.09,0.03,0.5,0.06) infinite;
+		}
+		.wrapper div:last-child{
+			width: 30px;
+			height: 30px;
+			position:absolute;
+			border:2px solid red;
+			border-radius:100%;
+			border-color:red transparent;
+			animation:rotates 1s 0s cubic-bezier(0.07, 0.17, 0.38, 0.1) infinite;
+		}
+		@keyframes rotates{
+			0%{
+				transform:rotate(0deg) scale(1)
+			}
+			50%{
+				transform:rotate(180deg) scale(.65)
+			}
+			100%{
+				transform:rotate(360deg) scale(1)
+			}
+		}
+		@keyframes addrouter{
+			0%{
+				transform:scale(1)
+			}
+			50%{
+				transform:scale(.3)
+			}
+			100%{
+				transform:scale(1)
+			}
+		}
+	</style>
+</head>
+<body>
+<div class='wrapper'>
+	<div></div>
+	<div></div>
+</div>
+</body>
+</html>

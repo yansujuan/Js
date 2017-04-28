@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>加载</title>
+	<style>
+		div{
+			position:relative;
+			display:inline-block;
+			animation: leftrotate 1s 0s ease-in-out infinite;
+		}
+		.first{
+			width: 15px;
+			height: 15px;
+			border-radius:100%;
+			border:2px solid red;
+			margin:100px auto;
+			position:absolute;
+			top:-20px;
+			left:23px;
+			border-color:red transparent;
+		}
+		.last{
+			width: 30px;
+			height: 30px;
+			border-radius:100%;
+			border:2px solid #ccc;
+			position: absolute;
+			left:15px;
+			top:72px;
+			border-color:#ccc transparent;
+			animation-direction: reverse;
+			animation-duration: 1s;
+		}
+		@keyframes leftrotate{
+			0%{
+				transform:rotate(0deg) scale(1)
+			}
+			50%{
+				transform:rotate(180deg) scale(.3)
+			}
+			100%{
+				transform:rotate(360deg) scale(1)
+			}
+			
+		}
+	</style>
+</head>
+<body>
+<div class='first'>
+	</div>
+	<div class='last'>
+
+		</div>
+</body>
+</html>

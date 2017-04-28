@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css动画</title>
+	<style>
+		body{
+			background: red;
+		}
+		.animates2{
+			width: 20px;
+			height:20px;
+			border:2px solid #fff;
+			border-color:#fff #fff transparent;
+			margin: 100px auto;
+			border-radius:100%;
+			animation:rotateScale 1s 0s linear infinite;
+		}
+		@keyframes rotateScale{
+			0%{
+				transform:rotate(0deg) scale(1)
+			}
+			50%{
+				transform:rotate(180deg) scale(.6)
+			}
+			100%{
+				transform:rotate(360deg) scale(1)
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class='animates2'></div>
+</body>
+</html>

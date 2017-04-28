@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>perspective</title>
+	<style>
+		div{
+			width: 50px;
+			height: 50px;
+			background:red;
+			margin:100px;
+			animation:per 10s 0s cubic-bezier(0.3,0.3,0.3,0.3) infinite;
+		}
+		@keyframes per{
+/*
+			0%{
+				transform:perspective(100px) rotateX(60deg) rotateY(90deg)
+			}
+*/
+			25%{
+				transform:perspective(100px) rotateX(180deg) rotateY(0)
+			}
+			50%{
+				
+				transform:perspective(100px) rotateX(180deg) rotateY(180deg)
+			}
+			75%{
+				transform:perspective(100px) rotateX(0deg) rotateY(180deg)
+			}
+			100%{
+				transform:perspective(100px) rotateX(0deg) rotateY(0)
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
