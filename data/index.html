@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+<script src='jquery-2.2.0.js'></script>
+	<script>
+/*		function show(X){
+			//值类型
+			console.log(typeof X);//undefined
+			console.log(typeof 'abc');//string
+			console.log(typeof 123);//number
+			console.log(typeof true);//boolean
+			
+			//引用类型  一切（引用类型）都是对象，对象是属性的集合
+			console.log(typeof function (){});//function
+			console.log(typeof [1,'a',true]);//object
+			console.log(typeof {a:10,b:20});//object
+			console.log(typeof null);//object
+			console.log(typeof new Number(10));//objectx
+		}
+		show()*/
+		
+		/*值类型的类型判断用typeof，引用类型的类型判断用instanceof*/
+		/*var fn = function(){}
+		console.log(fn instanceof Object) //true*/
+		
+		
+		//属性的集合
+		/*var fn = function () {
+            alert(100);
+        };
+		fn.a = 10;
+		fn.b = function () {
+			alert(123);
+		};
+		fn.c = {
+			name: "suyan",
+			year: 1988
+		};*/
+		
+		//jQuery源码中，“jQuery”或者“$”，这个变量其实是一个函数
+		/*console.log(typeof $);  // function
+		console.log($.trim(" ABC "));*/
+		
+		
+		//对象可以通过函数来创建
+		/*function fn(){
+			this.name='suyan';
+			this.age=1123457
+		}
+		var fns = new fn()
+		console.log(fns)*/
+		
+		
+		//对象都是通过函数来创建的
+		 /*var obj = new Object();
+			 obj.a = 10;
+			 obj.b = 20;
+
+        var arr = new Array();
+			arr[0] = 5;
+			arr[1] = 'x';
+			arr[2] = true;
+		console.log(typeof Object) //function
+		console.log(typeof Array)	//function*/
+		
+		
+		
+		
+		// 每个函数function都有一个prototype原型  prototype的属性值是一个对象(属性的集合)           
+			/*function Fn() { }
+			Fn.prototype.name = 'suyan';
+			Fn.prototype.getYear = function () {
+				return 1584;
+			};
+
+			var fn = new Fn();
+			console.log(fn.name);//suyan
+			console.log(fn.getYear());//1584*/
+		
+		
+		
+		//每个对象都有一个__proto__，可成为隐式原型 指向创建该对象的函数的prototype
+		
+		
+		/*var obj = {};
+		//obj.__proto__=== Object.prototype
+		//自定义的prototype的__proto__指向Object.prototype            但是Object.prototype确实一个特例——它的__proto__指向的是null，切记切记
+		console.log(obj.__proto__)//object()
+		console.log(Object.prototype)//object()*/
+		
+		//第一种方式是比较传统的函数创建方式
+			/*function fn(x,y){
+				return x+y
+			}
+			console.log(fn(5,6))*/
+		//第二种是用new Functoin创建
+			/*var fns = new Function('x','y','return x+y');
+			console.log(fns(5,6))*/
+		console.log(1===true)
+	</script>
+</body>
+</html>
