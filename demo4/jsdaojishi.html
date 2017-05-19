@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>js倒计时</title>
+	<style>
+		body,
+		div,
+		a,
+		span,
+		i {
+			margin: 0;
+			padding: 0;
+		}
+		
+		i {
+			font-style: normal;
+		}
+		
+		.adtop {
+			position: relative;
+			width: 100%;
+			height: 80px;
+			margin: 0 auto;
+		}
+		
+		.adtop a {
+			position: absolute;
+			width: 100%;
+			height: 80px;
+			background: #666;
+		}
+		
+		.adtop span {
+			position: absolute;
+			right: 6px;
+			top: 10px;
+			background: #fff;
+			width: 150px;
+			height: 20px;
+			padding-left: 10px;
+		}
+		
+		.adtop span i {
+			color: red;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="adtop" id="adtop">
+		<a href="#"></a>
+		<span><i>10 </i>秒之后自动关闭</span>
+	</div>
+	<script>
+		var adtop = document.getElementById("adtop");
+		var adtopi = adtop.getElementsByTagName("i")[0];
+
+		function adClose(s) {
+			s--;
+			if (s < 10)
+				adtopi.innerHTML = "0" + s + " ";
+			if (s == 0) {
+				adTopDo(0);
+				return;
+			}
+			return setTimeout(function() {
+				adClose(s)
+			}, 1000);
+		};
+
+		function adTopDo(height) {
+			height -= 4;
+			if (height <= 80) {
+				adtop.style.marginTop = height + "px";
+				return setTimeout(function() {
+					adTopDo(height)
+				}, 20);
+			};
+		}
+		adClose(11);
+
+	</script>
+</body>
+
+</html>
